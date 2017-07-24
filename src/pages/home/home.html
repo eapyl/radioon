@@ -1,14 +1,17 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>
+            Radio On
+        </ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+    <ion-list>
+        <button ion-item *ngFor="let item of stations" (click)="play(item.url)">
+            {{item.name}}
+        </button>
+    </ion-list>
+    <button ion-button (click)="stop()">Stop</button>
+    <!-- <div id="textpositiondiv">Time played: <span id="textposition">stopped</span></div> -->
 </ion-content>
